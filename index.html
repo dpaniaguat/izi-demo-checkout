@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Demo Checkout - Izipay</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="icon" type="image/x-icon" href="/demo/favicon.ico" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="titulo">
+        <h1>Demo Checkout (externo)</h1>
+      </div>
+      <div id="izi-loader" class="loader hide">
+        <img src="img/loader-izipay.gif" alt="loading-izipay" height="18px" />
+      </div>
+      <div class="cols">
+        <!-- Formulario -->
+        <div class="formulario-tarjeta gradient-first">
+          <div class="container">
+            <div class="progress-container">
+              <div class="progress" id="progress"></div>
+              <!--Id is assigned to a class/element when it has to be styled differently-->
+              <div class="circle active">1</div>
+              <div class="circle">2</div>
+              <div class="circle">3</div>
+            </div>
+            <div class="button-container">
+              <button class="btn" id="prev" disabled>Atrás</button>
+              <button class="btn" id="next" disabled>Siguiente</button>
+            </div>
+          </div>
+
+          <form
+            action=""
+            id="init-formulario-payment"
+            class="formulario-tarjeta"
+          ></form>
+
+          <form
+            action=""
+            id="formulario-tarjeta"
+            class="formulario-tarjeta form-scroll"
+            style="display: none"
+          ></form>
+        </div>
+
+        <section class="json-data" id="section-demo-embedded">
+          <form action="" id="formulario-pago-demo" class="gradient-first hide">
+            <div id="iframe-payment"></div>
+            <button
+              type="submit"
+              class="btn-pago-demo"
+              id="pagar-desde-demo"
+              style="display: none"
+            >
+              PAGAR AHORA
+            </button>
+          </form>
+          <section
+            class="json-payment gradient-others"
+            id="containerPaymentErrors"
+          >
+            <div class="flex-row">
+              <h3>SDK Validations:</h3>
+              <button id="copyPre" class="button-copy">
+                <svg
+                  height="24px"
+                  width="24px"
+                  viewBox="0 0 24 24"
+                  class="copyButtonIcon_y97N"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                  ></path>
+                </svg>
+                <!--<svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS">
+                          <path
+                            fill="currentColor"
+                            d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
+                          ></path>
+                        </svg>-->
+              </button>
+            </div>
+            <pre
+              class="json-payment payment-errors content-scroll"
+              id="json-payment-errors"
+            >
+				  {}
+			  </pre
+            >
+          </section>
+          <section class="json-payment payment-token gradient-others">
+            <div class="flex-row">
+              <h3>Payment Authorization:</h3>
+              <button id="copyAuth" class="button-copy">
+                <svg
+                  height="24px"
+                  width="24px"
+                  viewBox="0 0 24 24"
+                  class="copyButtonIcon_y97N"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <pre
+              class="json-payment payment-token content-scroll"
+              id="json-payment-token"
+            >
+			    {}
+		    </pre
+            >
+          </section>
+          <section class="json-payment gradient-others">
+            <div class="flex-row">
+              <h3>Payment Request:</h3>
+              <button id="copyRequest" class="button-copy">
+                <svg
+                  height="24px"
+                  width="24px"
+                  viewBox="0 0 24 24"
+                  class="copyButtonIcon_y97N"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <pre class="json-payment content-scroll" id="json-payment">
+			  {}
+		  </pre
+            >
+          </section>
+
+          <section
+            class="json-payment gradient-others"
+            id="json-payment-response-container"
+          >
+            <div class="flex-row">
+              <h3>Payment Response:</h3>
+              <button id="copyResponse" class="button-copy">
+                <svg
+                  height="24px"
+                  width="24px"
+                  viewBox="0 0 24 24"
+                  class="copyButtonIcon_y97N"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <pre class="json-payment content-scroll" id="json-payment-response">
+			  {}
+		  </pre
+            >
+          </section>
+          <section class="json-payment" style="display: none">
+            <div class="flex-row">
+              <h3>Payment Events:</h3>
+              <button id="copyEvents" class="button-copy">
+                <svg
+                  height="24px"
+                  width="24px"
+                  viewBox="0 0 24 24"
+                  class="copyButtonIcon_y97N"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <pre
+              class="json-payment content-scroll"
+              id="json-payment-response-events"
+            >
+			  {}
+		  </pre
+            >
+          </section>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-izipay">
+        &copy;
+        <span id="copyright">
+          <script>
+            document
+              .getElementById("copyright")
+              .appendChild(document.createTextNode(new Date().getFullYear()));
+          </script>
+        </span>
+        Izipay
+      </div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,900 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* INICIO SCROLL*/
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+/* FIN SCROLL*/
+*,
+:after,
+:before {
+    border: 0 solid #b5c2d980;
+}
+
+.hide {
+    display: none !important;
+}
+
+body {
+    background: #f1eded;
+    background: linear-gradient(45deg, #b6a8a8, #000000, #5b7274, #0e74e1);
+    font-family: 'Lato', sans-serif;
+     background-attachment: fixed;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+h5 {
+    margin-top: -8px;
+    margin-left: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show {
+    display: flex !important;
+    height: 70px;
+}
+
+
+.hide {
+    display: none;
+}
+
+.titulo {
+    font-size: 14px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h1 {
+    color: white;
+    /*background             : linear-gradient(to right, #120202 0%, #00A499 100%);*/
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-shadow: 1px 3px 13px #fff6;
+}
+
+.cols {
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    width: 100%;
+
+}
+
+@media (max-width: 600px) {
+    .cols {
+        flex-flow: column;
+    }
+}
+
+.json-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.json-payment {
+    /*background: rgb(37 43 54);*/
+    width: 100%;
+    padding: 0 22px 0 22px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    white-space: pre-wrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.content-scroll {
+    overflow-y: auto;
+    height: 40%;
+}
+
+@media (min-width: 600px) {
+    .json-payment {
+        max-height: 450px;
+    }
+
+    .content-scroll {
+        height: 60%;
+    }
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+/* ---------- Contenedor Boton ----------*/
+.contenedor-btn .btn-abrir-formulario {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+    background: #2364d2;
+    color: #fff;
+    position: relative;
+    top: -25px;
+    z-index: 3;
+    border-radius: 100%;
+    box-shadow: -5px 4px 8px rgba(24, 56, 182, 0.4);
+    padding: 5px;
+    transition: all .2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.contenedor-btn .btn-abrir-formulario:hover {
+    background: linear-gradient(to right, #120202 0%, #00A499 100%);
+}
+
+.contenedor-btn .btn-abrir-formulario.active {
+    transform: rotate(45deg);
+}
+
+/* ---------- Formulario Tarjeta ----------*/
+.formulario-tarjeta {
+    /*background: #fff;*/
+    width: 100%;
+    min-width: 220px;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 4px;
+    position: relative;
+
+}
+
+@media (max-width: 600px) {
+    .formulario-tarjeta {
+        padding: 30px 20px 0;
+    }
+}
+
+.formulario-tarjeta.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-enviar {
+    border: .45px solid #A0A0A0;
+    font-size: 12px;
+    height: 40px;
+    width: 100%;
+    padding: 13px 10px 0px 10px;
+    transition: .3s ease all;
+    border-radius: 4px;
+
+}
+
+.form-element {
+    position: relative;
+}
+
+.label-form {
+    position: absolute;
+    top: 5px;
+    font-size: 10px !important;
+    left: 10px;
+    color: #6b696d;
+}
+
+
+.label-form-second {
+    font-size: 10px !important;
+    color: #6b696d;
+}
+
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+    border: 2px solid #93BDED;
+}
+
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+    box-shadow: 0 0 4pt 1pt #00A09D;
+    outline-width: 0px;
+}
+
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+    border: 1px solid #00A09D;
+}
+
+.formulario-tarjeta input {
+    margin-bottom: 10px;
+}
+
+.formulario-tarjeta select {
+    margin-bottom: 10px;
+}
+
+.formulario-tarjeta .flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario-tarjeta .expira {
+    width: 100%;
+}
+
+.formulario-tarjeta .ccv {
+    min-width: 100px;
+}
+
+.formulario-tarjeta .grupo-select {
+    width: 100%;
+    margin-right: 15px;
+    position: relative;
+}
+
+.formulario-tarjeta .grupo-select i {}
+
+.formulario-tarjeta .grupo-select:hover i {
+    color: #93bfed;
+}
+
+.formulario-tarjeta .btn-enviar {
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    color: #fff;
+    background: #eb2f2f;
+    box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+    cursor: pointer;
+    height: auto;
+    position: fixed;
+    left: 30%;
+    bottom: 1%;
+    transform: translate(-30%, -1%);
+}
+
+.formulario-tarjeta .btn-token {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background: #eb2f2f;
+    box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}
+
+.formulario-tarjeta .btn-enviar:hover {
+    background: linear-gradient(to right, #120202 0%, #00A499 100%);
+}
+
+.izipay--custom-button {
+    background: #1850b1;
+}
+
+.payment-parent {
+    border-left: 1px solid #b5c2d980;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 12px;
+}
+
+.payment-children {
+    border-left: 1px solid #b5c2d980;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 0 12px;
+}
+
+h4 {
+    padding: 10px 0 10px 0;
+    font-style: italic;
+}
+
+.payment-errors {
+    /*background: #eb2f2f;*/
+}
+
+.payment-token {
+    /*background: #555757;*/
+    overflow: hidden;
+}
+
+#formulario-pago-demo {
+    width: 100%;
+}
+
+#iframe-payment {
+    /*background: rgb(215, 213, 213);*/
+    width: 100% !important;
+    height: 650px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: white;
+    padding: 1rem;
+}
+
+#formulario-pago-demo .hide {
+    display: none !important;
+}
+
+#formulario-pago-demo .btn-pago-demo {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background: #2e2f2f;
+    box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+    cursor: pointer;
+    height: auto;
+    bottom: 20px;
+    width: 100%;
+    border-radius: 4px;
+    height: 55px;
+    margin-top: 32px;
+    margin-bottom: 20px;
+}
+
+input[type=text] {
+    height: 40px;
+    font-size: 12px;
+}
+
+input[type=radio] {
+    size: 2px;
+    height: 1rem;
+    width: 1rem;
+    margin-top: 1rem;
+}
+
+input[type=checkbox] {
+    size: 2px;
+    height: 1rem;
+    width: 1rem;
+}
+
+input[type=text]:hover {
+    box-shadow: 0 0 4pt 1pt #00A09D;
+}
+
+input[type=text]:focus {
+    box-shadow: 0 0 4pt 1pt #00A09D;
+    outline-width: 0px;
+}
+
+details {
+    position: relative;
+}
+
+summary {
+    width: 80px;
+    align-items: center;
+    background-color: initial;
+    border: 1px solid #e6f6f5;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #00a09d;
+    cursor: pointer;
+    display: flex;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    gap: 4px;
+    justify-content: center;
+    line-height: 1.25rem;
+    margin-bottom: 14px;
+    padding: 0 8px;
+    position: absolute;
+    right: 0;
+    top: -18px;
+}
+
+.data-type {
+    font-size: 10px;
+    color: #ccc;
+    padding-left: 7px;
+}
+
+
+.form-scroll {
+    overflow: scroll;
+    height: 100vh;
+}
+
+#formulario-tarjeta {
+    padding: 30px 15px;
+}
+
+#init-formulario-payment {
+    height: 80%;
+    padding: 25px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+:root {
+    --line-border-fill: #00A09D;
+    --line-border-empty: #f1efef;
+
+}
+
+* {
+    /* asterisk * is used to select all element's in the html*/
+    box-sizing: border-box;
+    /*element's width will include content,margin and padding*/
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    /*all available space is placed(evenly) between the first and last items*/
+    margin-bottom: 30px;
+    /*to leave some space between steps and buttons*/
+    max-width: 100%;
+
+    z-index: 4;
+}
+
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 0;
+    transform: translateY(-50%);
+    /*minus to move up in y axis*/
+    z-index: -1;
+    transition: 0.4s ease-in;
+}
+
+.progress-container::before {
+    content: '';
+    /*must mentioned otherwise before after property will not work*/
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform: translateY(-50%);
+    /*minus to move up in y axis*/
+    z-index: -1;
+    transition: 0.4s ease-in;
+}
+
+.circle {
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--line-border-empty);
+    font-size: 12px;
+    color: #383048;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    color: #383048;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    /* there is a black border of 1px by default and in order to remove that we have se border as zero*/
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 10px;
+    width: 50%;
+    /* 8 px for top/bottom
+     and 10 px for left/right
+  */
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+    /*to remove blue outline when in focus.It can cause accessibility issue for people using only keyboard*/
+
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+
+    border: 0.2px solid #383048;
+    color: #919195;
+}
+
+.mtop-0::before {
+    content: "";
+
+}
+
+.title-step {
+    padding-bottom: 10px;
+    display: block;
+    color: #01a09d
+}
+
+
+#izi-loader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1072;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    max-width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(1.5px);
+}
+
+.item__decoration {
+    border-top-width: 1px;
+    margin-left: -12px;
+    margin-right: 12px;
+    margin-top: 8px;
+    width: 12px;
+}
+
+.button-copy {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    color: white;
+    border-radius: 4px;
+    border: .2px solid #ebe8e8;
+    padding: 8px;
+    /*position        : absolute;
+    right           : 10px;
+    top             : 10px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    /*for compatibility with older browsers*/
+    /* text styles */
+    text-decoration: none;
+}
+
+.button-copy svg path {
+    fill: #ebe8e8;
+}
+
+.button-copy:hover {
+    border: 1px solid white;
+    cursor: pointer;
+    background: linear-gradient(transparent, #333332);
+}
+
+.button-copy:hover svg path {
+    fill: white;
+}
+
+/*.button-copy:after {
+	content   : '';
+	position  : absolute;
+	top       : 2px;
+	left      : 2px;
+	width     : calc(100% - 4px);
+	height    : 50%;
+	background: linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+}*/
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#json-payment-errors {
+    height: auto !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #383048;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #01a09d;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #01a09d;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.flex-sb-ai {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-small-b {
+    font-weight: 300;
+    font-size: 10px;
+}
+
+.enviroment-check {
+    width: 25%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism card effect */
+.gradient-first {
+    backdrop-filter: blur(13px) saturate(200%);
+    -webkit-backdrop-filter: blur(13px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.81);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.gradient-others {
+    backdrop-filter: blur(6px) saturate(200%);
+    -webkit-backdrop-filter: blur(6px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.36);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.gradient-error {
+    backdrop-filter: blur(1px) saturate(0%);
+    -webkit-backdrop-filter: blur(8px) saturate(0%);
+    background-color: rgba(221, 17, 35, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+.footer-izipay {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    gap: 5px;
+    font-size: 12px;
+}
+
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #f2f4f4;
+    border-left: 12px solid #355dad;
+    /* Color azul para tipo "info" */
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    gap: 2px;
+}
+
+/* Estilos para el icono de informaciÃ³n */
+.alert .icon {
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+pre[contenteditable="true"] {
+    border: .4px solid #e6f7ff;
+    padding: 2rem;
+    white-space: pre-wrap;
+    /* Para que el texto se ajuste automÃ¡ticamente */
+    outline: none;
+    /* Para quitar el contorno al seleccionar el elemento */
+    height: 100% !important;
+    color: black;
+}
+
+.manual-config {
+    height: 100%;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #e4e9eb;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    height: 100%;
+}
+
+.tab-content h2 {
+    margin-top: 0;
+}
+
+.active-tab {
+    background: #3dd2ce;
+}
+
+.view-data-report {
+    position: fixed;
+    right: 2.5rem;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+
+    >button {
+        all: unset;
+        border-radius: 4px;
+        border: 1px solid #3dd2ce;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Historial de Transacciones</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="main-header">
+        <h1>Historial de Transacciones</h1>
+        <input type="text" id="searchInput" oninput="searchTransactions()" placeholder="Buscar transacción"/>
+      </section>
+      <section class="section-table">
+        <table id="transactionTable">
+          <thead>
+            <tr>
+              <th>Modo</th>
+              <th>Merchant</th>
+              <th>ID</th>
+              <th>OrderNumber</th>
+              <th>PaymentMethod</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Request</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas de la tabla se insertarán aquí con JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <section class="disclaimer">
+      <span>Se ordenará por la trx más reciente a la más antigua.</span>
+      <span>Se puede filtrar por cualquier campo.</span>
+    </section>
+    <script type="module" src="scripts.js"></script>
+  </body>
+  <!-- ... (código anterior) -->
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-container-title">
+        <h2 id="modalTitle"></h2>
+        <div class="modal-sub-title">
+          <span id="title_merchant"></span>
+          <span id="title_ordernumber"></span>
+        </div>
+      </div>
+
+      <pre id="modalContent"></pre>
+    </div>
+  </div>
+</html>

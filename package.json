@@ -1,0 +1,15 @@
+{
+  "name": "izipay-demo-button-pay",
+  "version": "1.0.0",
+  "description": "web de pruebas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://izipay-devops@dev.azure.com/izipay-devops/IzipayFrontendTeam/_git/izipay-demo-button-pay"
+  },
+  "author": "dpaniagua@izipay.pe",
+  "license": "ISC"
+}
